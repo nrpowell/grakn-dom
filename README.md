@@ -22,6 +22,7 @@ python ./domEncoder.py -d INSERT_KEY_HASH
 ```
 
 You can only decode something after it's already been encoded and inserted into Grakn. The shell will spit out the hash of the URL, which you can then use with the `-d` flag to decode the graph and convert it back to HTML. 
+
 -------------------------------------
 Reminder that this program doesn’t always work for non XHTML documents (i.e. where XML rules do not apply). For example, `link` and `meta` tags (and several others) do not take a closing backslash in non-XML documents, so there is no end tag and the program thinks that every successive link is a level deeper in the DOM tree as a result. To fix this, you would need to recognize the type of document you have and whether these elements take end tags. 
 
