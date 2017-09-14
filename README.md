@@ -11,7 +11,7 @@ You will then have to go into the Grakn directory and start the Grakn shell scri
 This will allow you to make queries through the Graql shell
 
 ## Running the program
-This was writeen on Python 3.6. Install all requirement with the `pip install -r requirements.txt` query and then run one of two queries to start the program
+This was writeen on Python 3.6. Install all requirement with the `pip install -r requirements.txt` query and then run one of two queries. You will need to run the first one before you run the second one.
 
 ```
 python ./domEncoder.py -e INSERT_URL_HERE
@@ -22,6 +22,8 @@ python ./domEncoder.py -d INSERT_KEY_HASH
 ```
 
 You can only decode something after it's already been encoded and inserted into Grakn. The shell will spit out the hash of the URL, which you can then use with the `-d` flag to decode the graph and convert it back to HTML. 
+
+Also, if you change the schema in between encodings of the same URL, or if the web page changes and you want those changes reflected, you will have to manually go into the graql shell and clean that keyspace and then encode it again.
 
 -------------------------------------
 Reminder that this program doesn’t always work for non XHTML documents (i.e. where XML rules do not apply). For example, `link` and `meta` tags (and several others) do not take a closing backslash in non-XML documents, so there is no end tag and the program thinks that every successive link is a level deeper in the DOM tree as a result. To fix this, you would need to recognize the type of document you have and whether these elements take end tags. 
