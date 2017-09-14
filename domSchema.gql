@@ -1,0 +1,146 @@
+insert
+	root sub entity
+		plays parent;
+
+	data sub entity
+		has body
+
+		plays left-sibling
+		plays right-sibling
+		plays child;
+
+	container sub entity
+		has tag
+		has other
+
+		plays left-sibling
+		plays right-sibling
+		plays parent
+		plays child;
+
+	global sub entity
+		is-abstract
+		has class
+		has unique-id
+		has style
+		has title
+		has tabindex
+
+		has other
+
+		plays parent
+		plays child
+		plays left-sibling
+		plays right-sibling;
+
+	a sub global
+		has href
+		has rel
+		has type;
+
+	blockquote sub global
+		has cite;
+
+	b sub global;
+
+	button sub global
+		has disabled
+		has name
+		has type
+		has value;
+
+	div sub global;
+
+	h sub global
+		has hsize;
+
+	hr sub global;
+
+	html sub global;
+
+	iframe sub global
+		has height
+		has name
+		has sandbox
+		has src
+		has width;
+
+	img sub global
+		has alt
+		has height
+		has ismap
+		has src
+		has usemap
+		has width;
+
+	i sub global;
+
+	li sub global
+		has value;
+
+	link sub global
+		has href
+		has rel
+		has type;
+
+	ol sub global
+		has start
+		has type;
+
+	nav sub global;
+
+	p sub global;
+
+	script sub global
+		has src
+		has type;
+
+	ul sub global;
+
+	child sub role;
+	parent sub role;
+	left-sibling sub role;
+	right-sibling sub role;
+
+	vertical sub relation
+		relates parent
+		relates child;
+
+	horizontal sub relation
+		relates left-sibling
+		relates right-sibling;
+
+	body sub resource datatype string;
+	other sub resource datatype string;
+	tag sub resource datatype string;
+
+	class sub resource datatype string;
+	unique-id sub resource datatype string;
+	style sub resource datatype string;
+	title sub resource datatype string;
+	tabindex sub resource datatype long;
+
+	href sub resource datatype string;
+	rel sub resource datatype string;
+	type sub resource datatype string;
+
+	cite sub resource datatype string;
+
+	disabled sub resource datatype boolean;
+	name sub resource datatype string;
+	value sub resource datatype string;
+
+	hsize sub resource datatype long;
+
+	height sub resource datatype long;
+	sandbox sub resource datatype string;
+	src sub resource datatype string;
+	width sub resource datatype long;
+
+	alt sub resource datatype string;
+	ismap sub resource datatype boolean;
+	usemap sub resource datatype string;
+
+	value sub resource datatype long;
+
+	start sub resource datatype long;
